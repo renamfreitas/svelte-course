@@ -1,9 +1,22 @@
 <script>
+  import Header from './UI/Header/Header.svelte'
+  import MeetupItem from './Meetups/MeetupItem/MeetupItem.svelte'
+
+  import { meetups } from './mockdata.js'
 
 </script>
 
 <style>
-
+  #meetups {
+    margin-top: 10rem;
+  }
 </style>
 
-<h1>Time for a project!</h1>
+<Header />
+
+<section id="meetups">
+
+</section>
+{#each meetups as meetup}
+  <MeetupItem {meetup} />
+{/each}

@@ -2,6 +2,7 @@
   import Header from './UI/Header/Header.svelte'
   import MeetupGrid from './Meetups/MeetupGrid/MeetupGrid.svelte'
   import TextInput from './UI/TextInput/TextInput.svelte';
+  import Button from './UI/Button/Button.svelte';
 
   import { meetups as mockData } from './mockdata.js'
 
@@ -81,7 +82,7 @@
       value={description}
       on:input={event => (description = event.target.value)} 
     />
-    <button type="submit">Save</button>
+    <Button type="submit" caption="Save" />
   </form>
   <MeetupGrid {meetups} />
 </main>

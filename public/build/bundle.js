@@ -384,13 +384,6 @@ var app = (function () {
         else
             dispatch_dev('SvelteDOMSetAttribute', { node, attribute, value });
     }
-    function set_data_dev(text, data) {
-        data = '' + data;
-        if (text.wholeText === data)
-            return;
-        dispatch_dev('SvelteDOMSetData', { node: text, data });
-        text.data = data;
-    }
     function validate_each_argument(arg) {
         if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
             let msg = '{#each} only iterates over array-like objects.';
@@ -442,12 +435,12 @@ var app = (function () {
     			header = element("header");
     			h1 = element("h1");
     			h1.textContent = "Meetups";
-    			attr_dev(h1, "class", "svelte-1oqjkst");
-    			add_location(h1, file$2, 25, 4, 412);
-    			attr_dev(header, "class", "svelte-1oqjkst");
-    			add_location(header, file$2, 24, 2, 399);
-    			attr_dev(div, "class", "header-container svelte-1oqjkst");
-    			add_location(div, file$2, 23, 0, 366);
+    			attr_dev(h1, "class", "svelte-1joswxi");
+    			add_location(h1, file$2, 25, 4, 411);
+    			attr_dev(header, "class", "svelte-1joswxi");
+    			add_location(header, file$2, 24, 2, 398);
+    			attr_dev(div, "class", "header-container svelte-1joswxi");
+    			add_location(div, file$2, 23, 0, 365);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -510,31 +503,21 @@ var app = (function () {
     	let article;
     	let header;
     	let h1;
-    	let t0_value = /*meetup*/ ctx[0].title + "";
-    	let t0;
     	let t1;
     	let h2;
-    	let t2_value = /*meetup*/ ctx[0].subtitle + "";
-    	let t2;
     	let t3;
     	let p0;
-    	let t4_value = /*meetup*/ ctx[0].address + "";
-    	let t4;
     	let t5;
     	let div0;
     	let img;
     	let img_src_value;
-    	let img_alt_value;
     	let t6;
     	let div1;
     	let p1;
-    	let t7_value = /*meetup*/ ctx[0].description + "";
-    	let t7;
     	let t8;
     	let footer;
     	let a;
     	let t9;
-    	let a_href_value;
     	let t10;
     	let button0;
     	let t12;
@@ -545,20 +528,20 @@ var app = (function () {
     			article = element("article");
     			header = element("header");
     			h1 = element("h1");
-    			t0 = text(t0_value);
+    			h1.textContent = `${/*title*/ ctx[0]}`;
     			t1 = space();
     			h2 = element("h2");
-    			t2 = text(t2_value);
+    			h2.textContent = `${/*subtitle*/ ctx[1]}`;
     			t3 = space();
     			p0 = element("p");
-    			t4 = text(t4_value);
+    			p0.textContent = `${/*address*/ ctx[2]}`;
     			t5 = space();
     			div0 = element("div");
     			img = element("img");
     			t6 = space();
     			div1 = element("div");
     			p1 = element("p");
-    			t7 = text(t7_value);
+    			p1.textContent = `${/*description*/ ctx[4]}`;
     			t8 = space();
     			footer = element("footer");
     			a = element("a");
@@ -570,31 +553,31 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Favorite";
     			attr_dev(h1, "class", "svelte-a34xz4");
-    			add_location(h1, file$1, 58, 4, 699);
+    			add_location(h1, file$1, 60, 4, 772);
     			attr_dev(h2, "class", "svelte-a34xz4");
-    			add_location(h2, file$1, 59, 4, 727);
+    			add_location(h2, file$1, 61, 4, 793);
     			attr_dev(p0, "class", "svelte-a34xz4");
-    			add_location(p0, file$1, 60, 4, 758);
+    			add_location(p0, file$1, 62, 4, 817);
     			attr_dev(header, "class", "svelte-a34xz4");
-    			add_location(header, file$1, 57, 2, 686);
-    			if (!src_url_equal(img.src, img_src_value = /*meetup*/ ctx[0].imageUrl)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", img_alt_value = /*meetup*/ ctx[0].title);
+    			add_location(header, file$1, 59, 2, 759);
+    			if (!src_url_equal(img.src, img_src_value = /*imageUrl*/ ctx[3])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", /*title*/ ctx[0]);
     			attr_dev(img, "class", "svelte-a34xz4");
-    			add_location(img, file$1, 63, 4, 820);
+    			add_location(img, file$1, 65, 4, 872);
     			attr_dev(div0, "class", "image svelte-a34xz4");
-    			add_location(div0, file$1, 62, 2, 796);
+    			add_location(div0, file$1, 64, 2, 848);
     			attr_dev(p1, "class", "svelte-a34xz4");
-    			add_location(p1, file$1, 66, 4, 908);
+    			add_location(p1, file$1, 68, 4, 946);
     			attr_dev(div1, "class", "content svelte-a34xz4");
-    			add_location(div1, file$1, 65, 2, 882);
-    			attr_dev(a, "href", a_href_value = "mailto:" + /*meetup*/ ctx[0].email);
-    			add_location(a, file$1, 69, 4, 960);
-    			add_location(button0, file$1, 70, 4, 1008);
-    			add_location(button1, file$1, 71, 4, 1042);
+    			add_location(div1, file$1, 67, 2, 920);
+    			attr_dev(a, "href", "mailto:" + /*email*/ ctx[5]);
+    			add_location(a, file$1, 71, 4, 991);
+    			add_location(button0, file$1, 72, 4, 1032);
+    			add_location(button1, file$1, 73, 4, 1066);
     			attr_dev(footer, "class", "svelte-a34xz4");
-    			add_location(footer, file$1, 68, 2, 947);
+    			add_location(footer, file$1, 70, 2, 978);
     			attr_dev(article, "class", "svelte-a34xz4");
-    			add_location(article, file$1, 56, 0, 674);
+    			add_location(article, file$1, 58, 0, 747);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -603,20 +586,16 @@ var app = (function () {
     			insert_dev(target, article, anchor);
     			append_dev(article, header);
     			append_dev(header, h1);
-    			append_dev(h1, t0);
     			append_dev(header, t1);
     			append_dev(header, h2);
-    			append_dev(h2, t2);
     			append_dev(header, t3);
     			append_dev(header, p0);
-    			append_dev(p0, t4);
     			append_dev(article, t5);
     			append_dev(article, div0);
     			append_dev(div0, img);
     			append_dev(article, t6);
     			append_dev(article, div1);
     			append_dev(div1, p1);
-    			append_dev(p1, t7);
     			append_dev(article, t8);
     			append_dev(article, footer);
     			append_dev(footer, a);
@@ -626,25 +605,7 @@ var app = (function () {
     			append_dev(footer, t12);
     			append_dev(footer, button1);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*meetup*/ 1 && t0_value !== (t0_value = /*meetup*/ ctx[0].title + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*meetup*/ 1 && t2_value !== (t2_value = /*meetup*/ ctx[0].subtitle + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*meetup*/ 1 && t4_value !== (t4_value = /*meetup*/ ctx[0].address + "")) set_data_dev(t4, t4_value);
-
-    			if (dirty & /*meetup*/ 1 && !src_url_equal(img.src, img_src_value = /*meetup*/ ctx[0].imageUrl)) {
-    				attr_dev(img, "src", img_src_value);
-    			}
-
-    			if (dirty & /*meetup*/ 1 && img_alt_value !== (img_alt_value = /*meetup*/ ctx[0].title)) {
-    				attr_dev(img, "alt", img_alt_value);
-    			}
-
-    			if (dirty & /*meetup*/ 1 && t7_value !== (t7_value = /*meetup*/ ctx[0].description + "")) set_data_dev(t7, t7_value);
-
-    			if (dirty & /*meetup*/ 1 && a_href_value !== (a_href_value = "mailto:" + /*meetup*/ ctx[0].email)) {
-    				attr_dev(a, "href", a_href_value);
-    			}
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
@@ -667,6 +628,7 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('MeetupItem', slots, []);
     	let { meetup } = $$props;
+    	let { title, subtitle, address, imageUrl, description, email } = meetup;
 
     	$$self.$$.on_mount.push(function () {
     		if (meetup === undefined && !('meetup' in $$props || $$self.$$.bound[$$self.$$.props['meetup']])) {
@@ -681,26 +643,40 @@ var app = (function () {
     	});
 
     	$$self.$$set = $$props => {
-    		if ('meetup' in $$props) $$invalidate(0, meetup = $$props.meetup);
+    		if ('meetup' in $$props) $$invalidate(6, meetup = $$props.meetup);
     	};
 
-    	$$self.$capture_state = () => ({ meetup });
+    	$$self.$capture_state = () => ({
+    		meetup,
+    		title,
+    		subtitle,
+    		address,
+    		imageUrl,
+    		description,
+    		email
+    	});
 
     	$$self.$inject_state = $$props => {
-    		if ('meetup' in $$props) $$invalidate(0, meetup = $$props.meetup);
+    		if ('meetup' in $$props) $$invalidate(6, meetup = $$props.meetup);
+    		if ('title' in $$props) $$invalidate(0, title = $$props.title);
+    		if ('subtitle' in $$props) $$invalidate(1, subtitle = $$props.subtitle);
+    		if ('address' in $$props) $$invalidate(2, address = $$props.address);
+    		if ('imageUrl' in $$props) $$invalidate(3, imageUrl = $$props.imageUrl);
+    		if ('description' in $$props) $$invalidate(4, description = $$props.description);
+    		if ('email' in $$props) $$invalidate(5, email = $$props.email);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [meetup];
+    	return [title, subtitle, address, imageUrl, description, email, meetup];
     }
 
     class MeetupItem extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { meetup: 0 });
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { meetup: 6 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

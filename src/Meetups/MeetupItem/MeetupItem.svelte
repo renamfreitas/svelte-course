@@ -1,8 +1,10 @@
 <script>
-  import './MeetupItem.css';
-
   export let meetup
 </script>
+
+<style lang="scss">
+  @import "./MeetupItem.scss";
+</style>
 
 <article>
   <header>
